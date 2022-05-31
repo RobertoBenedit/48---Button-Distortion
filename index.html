@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Button Distortion</title>
+        <link rel="stylesheet" href="style.css" />
+    </head>
+    <body>
+        <div class="container">
+            <button>Button 1</button>
+            <button>Button 2</button>
+            <button>Button 3</button>
+        </div>
+        <svg>
+            <defs>
+                <filter id="wave">
+                    <feTurbulence
+                        type="fractalNoise"
+                        baseFrequency="0.03 0.0001"
+                        numOctaves="1"
+                        result="warp"
+                    />
+                    <feDisplacementMap
+                        xChannelSelector="R"
+                        yChannelSelector="G"
+                        scale="30"
+                        in="SourceGraphic"
+                        in2="warpOffset"
+                    />
+                </filter>
+            </defs>
+        </svg>
+        <script src="script.js"></script>
+    </body>
+</html>
